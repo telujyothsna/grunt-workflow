@@ -4,6 +4,17 @@
 @import "../bower_components/font-awesome/less/font-awesome.less";
 @fa-font-path: "../fonts/font-awesome";
 
+@import "bootstrap-variables.less";
+
+@header-bg: #363539;
+@header-link-color: #fff;
+@header-dropdown-bg: @header-bg;
+@left-nav-bg: #434349;
+@left-nav-btn: #302f35;
+@blue-color: #2b85c0;
+@left-nav-width: 90px;
+
+
 .browsehappy {
   margin: 0.2em 0; 
   background: #ccc; 
@@ -16,5 +27,190 @@
 }
 
 body{
-	background: #fff;
+  padding-top: @navbar-height;
+}
+
+header {
+  background: @header-bg;
+
+  &.navbar {
+    a {
+      color: @header-link-color;
+    }
+    li {
+      > a {
+        line-height: @navbar-height - @navbar-padding-vertical;
+
+        &:hover {
+          background-color: #c00;
+        }
+      }
+      ul {
+        background-color: @header-dropdown-bg;
+      }
+
+      &.profile-holder {
+        @profile-icon-size: 35px;
+        a {
+          &::before {
+            background: url("/images/profile-icons.png") no-repeat 0 0;
+            background-clip: border-box;
+            width: @profile-icon-size;
+            content: ' ';
+            display: inline-block;
+            height: @profile-icon-size;
+            position: absolute;
+            left: 0;
+          }
+
+          img {
+            height: @profile-icon-size;
+            width: @profile-icon-size;
+            border-radius: @profile-icon-size/2;
+            position: absolute;
+            left: 0;
+          }
+
+          span {
+            padding-left: @profile-icon-size;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+
+nav#sidebar {
+  @link-color: #fff;
+  @link-color-active: #a19daa;
+
+  background-color: @left-nav-bg;
+  position: fixed;
+  height: 100%;
+  top: @header-bg;
+  width: @left-nav-width;
+
+  ul {
+    li {
+      @nav-icon-size: 35px;
+
+      border-left: 2px solid @left-nav-bg;
+      border-bottom: 1px solid darken(@left-nav-bg, 5%);
+      border-top: 1px solid lighten(@left-nav-bg, 5%);
+      margin: 0;
+
+      a {
+        border-radius: 0;
+        color: @link-color;
+        height: 90px;
+        display: block;
+        width: 100%;
+        line-height: 45px;
+        text-align: center;
+        padding: 0;
+
+        span {
+          display: block;
+          line-height: 1.2em;
+        }
+
+        i {
+            width: @nav-icon-size;
+            height: 35px;
+            display: block;
+            vertical-align: middle;
+            margin: 0 auto;
+
+            &.db-icon {
+              background: url("/images/left-nav-icons.png") no-repeat 0 18px;
+            }
+
+            &.as-icon {
+              background: url("/images/left-nav-icons.png") no-repeat -38px 9px;
+            }
+
+            &.create-asst-icon {
+              background: url("/images/left-nav-icons.png") no-repeat  -72px 9px;
+            }
+
+            &.asst-lib-icon {
+              background: url("/images/left-nav-icons.png") no-repeat -110px 9px;
+            }
+
+            &.my-asst-icon {
+              background: url("/images/left-nav-icons.png") no-repeat -148px 9px;
+            }
+
+            &.reports-icon {
+              background: url("/images/left-nav-icons.png") no-repeat -186px 9px;
+            }
+
+            &.m-class-icon {
+              background: url("/images/left-nav-icons.png") no-repeat -228px 9px;
+            }
+
+          }
+      }
+
+      &.active {
+        border-left: 2px solid @blue-color;
+        position: relative;
+
+        > a {
+          color: @link-color-active;
+          background-color: @left-nav-btn;
+
+          &:hover {
+            background-color: @left-nav-btn;
+          }
+
+          &:focus {
+            background-color: @left-nav-btn;
+          }
+        }
+
+        &:after{
+          @arrow-size: 16px;
+
+          content: " ";
+          position: absolute;
+          width:0;
+          height:0;
+          border: @arrow-size/2 solid transparent;
+          /* left pointing arrow on the right side of the box */
+          // left arrow
+          border-left:0;
+          border-right-color: #fff;
+          //push to right side
+          right:0;
+
+          // halway from top
+          top:50%;
+          //nudge up by half the height to center properly
+          margin-top: -@arrow-size / 2;
+        }
+      }
+
+      &:hover {
+        border-left: 2px solid @blue-color;
+      }
+    }
+  }
+}
+
+/* Main content styles */
+
+#main {
+  padding-left: @left-nav-width + 10; 
+  overflow: hidden;
+}
+
+#rightbar{
+  position: absolute;
+  right:0;
+  height: 100%;
+  background: #ccc;
+  top:0;
 }

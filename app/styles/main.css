@@ -2266,8 +2266,8 @@ input[type="button"].btn-block {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../fonts/glyphicons/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -3390,7 +3390,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #363539;
 }
 .nav > li.disabled > a {
   color: #999999;
@@ -3405,7 +3405,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #eeeeee;
+  background-color: #363539;
   border-color: #428bca;
 }
 .nav .nav-divider {
@@ -7304,6 +7304,138 @@ td.visible-print {
   margin: 50px auto 0 auto;
 }
 body {
-  background: #fff;
+  padding-top: 50px;
+}
+header {
+  background: #363539;
+}
+header.navbar a {
+  color: #ffffff;
+}
+header.navbar li > a {
+  line-height: 35px;
+}
+header.navbar li > a:hover {
+  background-color: #c00;
+}
+header.navbar li ul {
+  background-color: #363539;
+}
+header.navbar li.profile-holder a::before {
+  background: url("/images/profile-icons.png") no-repeat 0 0;
+  background-clip: border-box;
+  width: 35px;
+  content: ' ';
+  display: inline-block;
+  height: 35px;
+  position: absolute;
+  left: 0;
+}
+header.navbar li.profile-holder a img {
+  height: 35px;
+  width: 35px;
+  border-radius: 17.5px;
+  position: absolute;
+  left: 0;
+}
+header.navbar li.profile-holder a span {
+  padding-left: 35px;
+}
+nav#sidebar {
+  background-color: #434349;
+  position: fixed;
+  height: 100%;
+  top: #363539;
+  width: 90px;
+}
+nav#sidebar ul li {
+  border-left: 2px solid #434349;
+  border-bottom: 1px solid #37373c;
+  border-top: 1px solid #4f4f56;
+  margin: 0;
+}
+nav#sidebar ul li a {
+  border-radius: 0;
+  color: #ffffff;
+  height: 90px;
+  display: block;
+  width: 100%;
+  line-height: 45px;
+  text-align: center;
+  padding: 0;
+}
+nav#sidebar ul li a span {
+  display: block;
+  line-height: 1.2em;
+}
+nav#sidebar ul li a i {
+  width: 35px;
+  height: 35px;
+  display: block;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+nav#sidebar ul li a i.db-icon {
+  background: url("/images/left-nav-icons.png") no-repeat 0 18px;
+}
+nav#sidebar ul li a i.as-icon {
+  background: url("/images/left-nav-icons.png") no-repeat -38px 9px;
+}
+nav#sidebar ul li a i.create-asst-icon {
+  background: url("/images/left-nav-icons.png") no-repeat -72px 9px;
+}
+nav#sidebar ul li a i.asst-lib-icon {
+  background: url("/images/left-nav-icons.png") no-repeat -110px 9px;
+}
+nav#sidebar ul li a i.my-asst-icon {
+  background: url("/images/left-nav-icons.png") no-repeat -148px 9px;
+}
+nav#sidebar ul li a i.reports-icon {
+  background: url("/images/left-nav-icons.png") no-repeat -186px 9px;
+}
+nav#sidebar ul li a i.m-class-icon {
+  background: url("/images/left-nav-icons.png") no-repeat -228px 9px;
+}
+nav#sidebar ul li.active {
+  border-left: 2px solid #2b85c0;
+  position: relative;
+}
+nav#sidebar ul li.active > a {
+  color: #a19daa;
+  background-color: #302f35;
+}
+nav#sidebar ul li.active > a:hover {
+  background-color: #302f35;
+}
+nav#sidebar ul li.active > a:focus {
+  background-color: #302f35;
+}
+nav#sidebar ul li.active:after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  /* left pointing arrow on the right side of the box */
+  border-left: 0;
+  border-right-color: #fff;
+  right: 0;
+  top: 50%;
+  margin-top: -8px;
+}
+nav#sidebar ul li:hover {
+  border-left: 2px solid #2b85c0;
+}
+/* Main content styles */
+#main {
+  padding-left: 100px;
+  overflow: hidden;
+}
+#rightbar {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  background: #ccc;
+  top: 0;
 }
 /*# sourceMappingURL=/styles/main.css.map */
