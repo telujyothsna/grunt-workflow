@@ -7362,7 +7362,7 @@ strong {
   background: url('/images/content-icons.png') -70px 0px no-repeat;
 }
 .small-text {
-  font-size: 0.5em;
+  font-size: 0.6em;
 }
 .sq-box {
   border: 1px solid #22a7f0;
@@ -7373,14 +7373,25 @@ strong {
   height: 100px;
   margin-bottom: 5px;
 }
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+@media screen and (min-width: 768px) and (max-width: 1600px) {
+  .sq-box {
+    width: 100%;
+  }
 }
-.jumbotron {
-  margin: 50px auto 0 auto;
+@media screen and (min-width: 768px) {
+  .sq-box {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+}
+.sq-box > span {
+  color: #2b85c0;
+}
+@media screen and (min-width: 768px) and (max-width: 1600px) {
+  .sq-box > span {
+    font-size: 30px;
+    line-height: 36px;
+  }
 }
 .chapter-icon {
   background-image: url('/images/chapter-icons.png');
@@ -7646,16 +7657,11 @@ nav#sidebar ul li:hover {
   height: 100%;
   top: 65px;
   padding-right: 40px;
-  padding-top: 75px;
   margin-right: -35px;
 }
 #rightbar h3.section-header {
   position: absolute;
   top: 15px;
-}
-#rightbar .activity-feed-pane {
-  overflow: auto;
-  height: 100%;
 }
 #rightbar .card {
   line-height: 1.5em;
@@ -7677,7 +7683,7 @@ nav#sidebar ul li:hover {
 }
 #rightbar .shared-item {
   border-top: 1px solid #eaeaf6;
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 10px 0;
 }
 #rightbar .shared-item .shared-item-desc {
@@ -7712,9 +7718,6 @@ nav#sidebar ul li:hover {
     float: none;
     margin: 15px auto;
   }
-}
-.sq-box > span {
-  color: #2b85c0;
 }
 .progress {
   height: 10px;
